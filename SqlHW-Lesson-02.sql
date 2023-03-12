@@ -24,7 +24,7 @@ order by buyPrice asc;
 
 -- 5. Verify all the employees who report to 1102,1088 or 1143.
 SELECT * FROM employees
- where reportsTo in ('1102','1088','1143');
+ where reportsTo in (1102,1088,1143);
 
 
 -- 6. How to display contact first name, last name, phone number of customers who don’t have state entered.
