@@ -1,25 +1,31 @@
-##################
--- INNER JOIN
-#################
 
-select * from employees;
-select * from offices;
-
--- selct all columns from both
-select * from employees inner join offices on employees.officeCode = offices.officeCode;
-
--- specifying certain columns
-select employees.firstName, employees.lastName, offices.city, offices,country from employees inner join offices on employees.officeCode = offices.officeCode;
-
--- using alias
-select e.firstName,e.lastName,o.city,o.country from employees as e inner join offices as o on e.officeCode = o.officeCode;
+#######
+--  INNER JOIN
+########
 
 
-################
 
-select * from products;
-select * from productlines;
 
-select p1.productCode, p1.productName, p2.textDescription from products as p1 Inner join productlines as p2 on p1.productLine = p2.productLine;
+SELECT * FROM orders WHERE orderNumber < 10103;
+select * FROM orderdetails;
+
+select * FROM orderdetails WHERE orderNumber < 10103;
+
+
+
+SELECT orders.*,od.* FROM orders 
+inner join orderdetails AS od
+ON  orders.orderNumber = od.orderNumber
+WHERE orders.orderNumber < 10103;
+
+SELECT orders.orderNumber,orders.orderDate,orders.status,od.quantityOrdered, od.priceEach FROM orders 
+inner join orderdetails AS od
+ON  orders.orderNumber = od.orderNumber
+WHERE orders.orderNumber < 10103;
+
+
+
+
+
 
 
